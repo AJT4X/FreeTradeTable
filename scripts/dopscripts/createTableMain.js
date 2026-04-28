@@ -194,7 +194,7 @@ export function CreateGraph(e) {
                             const data = context[0].raw;
                             
                             let lines = [];
-                            lines.push(`Price in Dollar $`);
+                            lines.push(`Price in dollars $`);
                             if(data.BotCanBuy != null && data.BotCanBuy !== '-')
                                 lines.push(`Bot can buy: ${data.BotCanBuy}`);
 
