@@ -1,4 +1,4 @@
-import { steam_icon_url,steam_items_all,jsob_sites_item_all,SitesInfo,CurAscii,ReversCurrency,SitesCurrency,SteamCurrency } from '../jsons/jsones_all.js';
+import { steam_icon_url,steam_items_all,jsob_sites_item_all,SitesInfo,CurAscii,ReversCurrency,SitesCurrency,SteamCurrency,TranslationBlock } from '../jsons/jsones_all.js';
 
 export function PicsSitesFunc(editel){
     
@@ -43,7 +43,7 @@ export function PicsSitesFunc(editel){
                 RowSitePic.dataset.name = nameSite;
                 RowSitePic.dataset.domain = domain;
                 ImgPicSite.src = SitesInfo[nameSite]['icon']
-                TextPicSite.innerText = `${nameSite.toUpperCase()} ${domain.toUpperCase()}`;
+                TextPicSite.innerText = `${nameSite.toUpperCase()} (${TranslationBlock['ru']['domain'][domain].toUpperCase()})`;
                 RowSitePic.append(ImgPicSite,TextPicSite);
                 AllRightDiv.append(RowSitePic);
                 
