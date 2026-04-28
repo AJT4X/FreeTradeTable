@@ -64,7 +64,7 @@ export class CreateMainTable{
                         <img class='imgSteamPic itemInRow' src='${SitesInfo[this.rightSite].icon}'>
                         <span class='smalRowInfo' id='ItemInRow'data-dollarprice='${jsob_sites_item_all[this.rightSite][this.domain][key].price}' data-price='${jsob_sites_item_all[this.rightSite][this.domain][key].price}'>${((jsob_sites_item_all[this.rightSite][this.domain][key].price)*parseFloat(SitesCurrency[MainCurrency])).toFixed(2)}${ReversCurrency[MainCurrency]}</span>
                         <span id='Procent' data-procent=${Procent} style='color:${Procent>0? 'green' : 'red'}'>${Procent > 0? '+' : ''}${Procent}%</span>
-                        ${jsob_sites_item_all[this.rightSite][this.domain][key]?.maxBotGetItem?`<span class='smalRowInfo'>🤖 ${jsob_sites_item_all[this.rightSite][this.domain][key].maxBotGetItem}</span>` : ""}
+                        ${jsob_sites_item_all[this.rightSite][this.domain][key]?.maxBotGetItem?`<span title='Бот готов принять ${jsob_sites_item_all[this.rightSite][this.domain][key].maxBotGetItem} шт' class='smalRowInfo'>🤖 ${jsob_sites_item_all[this.rightSite][this.domain][key].maxBotGetItem}</span>` : ""}
                         <span style='cursor:pointer' id='GraphFind'>📊</spam>
                     </div>
                     
@@ -129,6 +129,7 @@ export function CreateGraph(e) {
     const SteamData =  historySitesAll['steam']['main'][itemName];
     
     const itemData = historySitesAll[MainSite][DomainMain][itemName];
+    console.log(itemData);
     
 
     if (!itemData) return;
@@ -138,13 +139,16 @@ export function CreateGraph(e) {
     
     itemData.forEach(item => {
         const key = `${MainSite} (${DomainMain})`;
+
         if (!datasetsMap[key]) {
             datasetsMap[key] = [];
         }
 
         datasetsMap[key].push({
             x: new Date(item.time * 1000),
-            y: item.price
+            y: item.price,
+            BotCanBuy: item.maxBotGetItem ?? null,
+            OnBot: item.OnBot ?? null,
         });
     });
     SteamData.forEach(item => {
@@ -180,6 +184,25 @@ export function CreateGraph(e) {
                     time: {
                         unit: 'day',
                         tooltipFormat: 'dd.MM HH:mm'
+                    }
+                }
+            },
+            plugins:{
+                tooltip:{
+                    callbacks:{
+                        afterBody:(context) => {
+                            const data = context[0].raw;
+                            
+                            let lines = [];
+                            lines.push(`Price in Dollar $`);
+                            if(data.BotCanBuy != null && data.BotCanBuy !== '-')
+                                lines.push(`Bot can buy: ${data.BotCanBuy}`);
+
+                            if(data.OnBot != null && data.OnBot !== '-')
+                                lines.push(`Items on bot: ${data.OnBot}`);
+                            
+                            return lines;
+                        }
                     }
                 }
             }
