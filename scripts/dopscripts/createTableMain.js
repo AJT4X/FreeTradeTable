@@ -34,7 +34,7 @@ export class CreateMainTable{
                 <button title='Сортировка' class="SortProcent" id="SortItemInTable">⬍</button>
                 <a class='RowInfo' style='color:red;font-size:14px' href="${SitesInfo[this.rightSite]['url']}" target="_blank">${TranslationBlock['ru']['GoSite']}</a>
                 ${SitesInfo[this.rightSite]?.comment
-                    ?`<span title='CsFloat P2P Цена является рекомендуемая!'id='CommentDev' style='cursor:pointer;color:red' class="RowInfo">!</span>` : ''}
+                    ?`<span title='site info' id='CommentDev' style='cursor:pointer;color:red' class="RowInfo">!</span>` : ''}
         `;
             Object.entries(jsob_sites_item_all[this.rightSite][this.domain]).forEach(([key,value])=>{
                 if(value['active'] == 'true'){
@@ -100,11 +100,13 @@ export function sortProcent(info){
 }
 
 export function DevComment(){
-  
+    document.querySelector('#Comment')?.remove();
+
     const Comment = document.createElement('div');
     const headDiv = document.querySelector('.headHelpDiv');
     const site_name_find = headDiv.querySelector('#SiteName');
     const site_name = site_name_find.dataset.sitename;
+    Comment.id = 'Comment';
     Comment.innerHTML = `<span class='RowInfo'>${SitesInfo[site_name]['comment']}</span>`;
     headDiv.append(Comment);
     return;
