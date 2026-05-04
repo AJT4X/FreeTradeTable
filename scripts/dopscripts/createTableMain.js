@@ -59,7 +59,7 @@ export class CreateMainTable{
                     </div>
                     <div class='RowDivItem'>
                         <img class="imgSteamPic itemInRow" src="${steam_icon_url}">
-                        <span class="smalRowInfo" id='ItemInRowSteam'data-dollarprice='${parseFloat(steam_items_all[key]['dollarPrice'])}' data-price='${parseFloat(steam_dollar_price)}'>${(parseFloat(steam_dollar_price)*parseFloat(SteamCurrency[MainCurrency])).toFixed(2)}${ReversCurrency[MainCurrency]}</span>
+                        <span class="smalRowInfo" id='ItemInRowSteam'data-dollarprice='${parseFloat(steam_items_all[key]['dollarPrice'])}' data-price='${(parseFloat(steam_dollar_price)*parseFloat(SteamCurrency[MainCurrency]))}'>${(parseFloat(steam_dollar_price)*parseFloat(SteamCurrency[MainCurrency])).toFixed(2)}${ReversCurrency[MainCurrency]}</span>
                         <span class="smalRowInfo" id="time">(${calculateTimestamsShort(steam_items_all[key].timestamp)})</span>
                         <img class='imgSteamPic itemInRow' src='${SitesInfo[this.rightSite].icon}'>
                         <span class='smalRowInfo' id='ItemInRow'data-dollarprice='${jsob_sites_item_all[this.rightSite][this.domain][key].price}' data-price='${jsob_sites_item_all[this.rightSite][this.domain][key].price}'>${((jsob_sites_item_all[this.rightSite][this.domain][key].price)*parseFloat(SitesCurrency[MainCurrency])).toFixed(2)}${ReversCurrency[MainCurrency]}</span>
