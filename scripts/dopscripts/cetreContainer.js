@@ -11,10 +11,19 @@ export function CenterDiv(Element){
         // const CheckTable = document.querySelector('.RowContanerDiv');
         // if(!CheckTable) return;
         document.querySelectorAll('[data-dollarprice]').forEach(el=>{
+            let rate;
             if(el.id =='imgSteamPic'){
-                el.innerText = `${(parseFloat(el.dataset.dollarprice)*parseFloat(SteamCurrency[selectedCurrency])).toFixed(2)}${ReversCurrency[selectedCurrency]}`;
+                rate = parseFloat(SteamCurrency[selectedCurrency]);
+            }else{
+                rate = parseFloat(SteamCurrency[selectedCurrency]);
             }
-                el.innerText = `${(parseFloat(el.dataset.dollarprice)*parseFloat(SitesCurrency[selectedCurrency])).toFixed(2)}${ReversCurrency[selectedCurrency]}`;
+
+            const basePrice = parseFloat(el.dataset.dollarprice);
+            const convert = basePrice * rate;
+
+            el.innerText = `${convert.toFixed(2)}${ReversCurrency[selectedCurrency]}`;
+            el.dataset.price = convert;
+                
         });
         
         return;
