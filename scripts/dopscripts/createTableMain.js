@@ -31,7 +31,7 @@ export class CreateMainTable{
                 <span class='RowInfo'>Update:${(SitesInfo[this.rightSite]['timeupdate'][this.domain]).slice(0,16)}</span>
                 ${SitesInfo[this.rightSite]?.promo 
                 ?`<span class='RowInfo'>Promo: ${SitesInfo[this.rightSite].promo}</span>` : ''}
-                <button title='Сортировка' class="SortProcent" id="SortItemInTable">⬍</button>
+                <button title='Сортировка' class='Sort' id="SortItemInTable">↓☰↑</button>
                 <a class='RowInfo' style='color:red;font-size:14px' href="${SitesInfo[this.rightSite]['url']}" target="_blank">${TranslationBlock['ru']['GoSite']}</a>
                 ${SitesInfo[this.rightSite]?.comment
                     ?`<span title='site info' id='CommentDev' style='cursor:pointer;color:red' class="RowInfo">!</span>` : ''}
@@ -82,10 +82,33 @@ export class CreateMainTable{
         console.log(err);
         }}
 }
-let StatusFilterMain = 'asc';
-export function sortProcent(info){
+export function CreateFilter(){
+    document.querySelector('#FilteredDiv')?.remove();
+    const helpDiv = document.querySelector('.headHelpDiv');
+    const FilteredDiv = document.createElement('div');
+    FilteredDiv.classList.add('RowInfo');
+    FilteredDiv.id = 'FilteredDiv';
+
+    FilteredDiv.innerHTML = `
+    <span id='ProcentFiltered' class='Sort'>↕%</span>
+    <span id='PriceFiltered' class='Sort'>↕$</span>
+    <div id='MinMax'>
+        <input class='MinMaxInput' id='minPrice' placeholder='Min.Price'></input>
+        <input class='MinMaxInput' id='maxPrice' placeholder='Max.Price'></input>
+    </div>
     
+    `;
+    
+    helpDiv.append(FilteredDiv);
+    return;
+}
+let StatusFilterMain = 'asc';
+let StatusFilterPrice = 'asc';
+
+export function sortFunc(info){
+    console.log('Sort',info);
     if (info=='procent'){
+        console.log('procent');
         let cont = document.querySelector('.RowContanerDiv');
         const allRow = Array.from(cont.querySelectorAll('.rowDiv'));
         allRow.sort((a,b)=>{
@@ -96,6 +119,34 @@ export function sortProcent(info){
         });
         allRow.forEach(el=>cont.appendChild(el));
         StatusFilterMain = StatusFilterMain ==='asc' ? "desc" : "asc";
+    }else if(info=='price'){
+        console.log('price');
+        let cont = document.querySelector('.RowContanerDiv');
+        const allRow = Array.from(cont.querySelectorAll('.rowDiv'));
+        allRow.sort((a,b)=>{
+            let A = Number(parseFloat(a.querySelector('[data-dollarprice]').dataset.dollarprice));
+            let B = Number(parseFloat(b.querySelector('[data-dollarprice]').dataset.dollarprice));
+           
+            return StatusFilterPrice ==='asc' ? A-B : B-A;
+        });
+        allRow.forEach(el=>cont.appendChild(el));
+        StatusFilterPrice = StatusFilterPrice ==='asc' ? "desc" : "asc";
+    }else if(info=='MinMax'){
+        console.log('MinMax');
+        let min = Number(document.getElementById('minPrice').value) || 0;
+        let max = Number(document.getElementById('maxPrice').value) || Infinity;
+
+        let cont = document.querySelector('.RowContanerDiv');
+        const allRow = Array.from(cont.querySelectorAll('.rowDiv'));
+
+        allRow.forEach(row=>{
+            let price = Number(row.querySelector('[data-price]').dataset.price);
+            if (price>= min && price <= max){
+                row.style.display = '';
+            }else{
+                row.style.display='none';
+            }
+        });
     }
 }
 

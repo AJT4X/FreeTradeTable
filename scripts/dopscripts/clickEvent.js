@@ -1,5 +1,5 @@
 import { PicsSitesFunc, RightPicEdit } from './picSites.js';
-import { sortProcent,DevComment  } from './createTableMain.js';
+import { sortFunc,DevComment,CreateFilter  } from './createTableMain.js';
 import { FindDetect,CreateItemFindBlock } from './cetreContainer.js'
 import { CreateGraph } from './createTableMain.js';
 
@@ -9,11 +9,19 @@ export function SetNewCur(newCur){
 export function EventClick(callback) {
     let LeftPic = null;
     let returnJson = {};
-
+    document.addEventListener('change',async (el)=>{
+        console.log('MiNMax');
+        sortFunc('MinMax');
+    });
     document.addEventListener('click',async (el)=>{
-    
+        if(el.target.closest('#ProcentFiltered')){
+            sortFunc('procent');
+        };
+        if(el.target.closest('#PriceFiltered')){
+            sortFunc('price');
+        };
         if(el.target.closest('#SortItemInTable')){
-            sortProcent('procent');
+            CreateFilter();
         };
         if(el.target.closest('#CommentDev')){
             DevComment();
