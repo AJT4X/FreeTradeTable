@@ -110,7 +110,7 @@ body {
 }
 .left:hover,
 .right:hover{
-    transform: scale(1.15);  
+    transform: scale(1);  
     box-shadow: 0 0 15px rgba(0, 255, 200, 0.5);  
     gap:5px;
 }
