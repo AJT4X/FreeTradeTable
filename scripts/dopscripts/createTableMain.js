@@ -106,9 +106,9 @@ let StatusFilterMain = 'asc';
 let StatusFilterPrice = 'asc';
 
 export function sortFunc(info){
-    console.log('Sort',info);
+   
     if (info=='procent'){
-        console.log('procent');
+        
         let cont = document.querySelector('.RowContanerDiv');
         const allRow = Array.from(cont.querySelectorAll('.rowDiv'));
         allRow.sort((a,b)=>{
@@ -120,7 +120,7 @@ export function sortFunc(info){
         allRow.forEach(el=>cont.appendChild(el));
         StatusFilterMain = StatusFilterMain ==='asc' ? "desc" : "asc";
     }else if(info=='price'){
-        console.log('price');
+        
         let cont = document.querySelector('.RowContanerDiv');
         const allRow = Array.from(cont.querySelectorAll('.rowDiv'));
         allRow.sort((a,b)=>{
@@ -132,7 +132,7 @@ export function sortFunc(info){
         allRow.forEach(el=>cont.appendChild(el));
         StatusFilterPrice = StatusFilterPrice ==='asc' ? "desc" : "asc";
     }else if(info=='MinMax'){
-        console.log('MinMax');
+        
         let min = Number(document.getElementById('minPrice').value) || 0;
         let max = Number(document.getElementById('maxPrice').value) || Infinity;
 
@@ -184,7 +184,7 @@ export function CreateGraph(e) {
     const SteamData =  historySitesAll['steam']['main'][itemName];
     
     const itemData = historySitesAll[MainSite][DomainMain][itemName];
-    console.log(itemData);
+    
     
 
     if (!itemData) return;

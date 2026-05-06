@@ -10,7 +10,7 @@ export function EventClick(callback) {
     let LeftPic = null;
     let returnJson = {};
     document.addEventListener('change',async (el)=>{
-        console.log('MiNMax');
+        
         sortFunc('MinMax');
     });
     document.addEventListener('click',async (el)=>{
