@@ -26,7 +26,13 @@ body {
     align-items: center;
     flex-direction: column;
 }
-
+.MainDiv{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 .PicImg{
     width: 30%;
     height: 30%;
@@ -125,6 +131,7 @@ body {
     gap:15px;
     width: 100%;
     flex-wrap: wrap;
+    
 }
 
 .RowContanerDiv {
@@ -275,10 +282,13 @@ body {
         align-items: center;
         width: 100%;
     }
+    .RowDivItem{
+        gap:5px;
+    }
     #History{
-    width: 100%;
-    height: 100%;
-}
+        width: 90%;
+        height: 100%;
+    }
     .PicSites{
         font-size: 12px;
     }
