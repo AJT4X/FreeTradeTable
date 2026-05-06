@@ -53,7 +53,6 @@ export class CreateMainTable{
                     let Procent = parseFloat((parseFloat(jsob_sites_item_all[this.rightSite][this.domain][key].price - parseFloat(steam_dollar_price))/parseFloat(steam_dollar_price))*100).toFixed(2);    
                     
                     RowDivItemInfo.innerHTML = `
-                    <div class='MainDiv'>
                     <div class="RowDivItem">
                         <img class='imgSteamPic itemInRow' data-domain='${this.domain}' data-skinname='${key}' src=${steam_items_all[key].image}></img>
                         <span style="color:white;font-size: 24px;cursor: pointer" id='ItemInRow' data-name='${key}'>${key} </span>
@@ -68,7 +67,8 @@ export class CreateMainTable{
                         ${jsob_sites_item_all[this.rightSite][this.domain][key]?.maxBotGetItem?`<span title='Бот готов принять ${jsob_sites_item_all[this.rightSite][this.domain][key].maxBotGetItem} шт' class='smalRowInfo'>🤖 ${jsob_sites_item_all[this.rightSite][this.domain][key].maxBotGetItem}</span>` : ""}
                         <span style='cursor:pointer' id='GraphFind'>📊</spam>
                     </div>
-                    </div>
+                    
+                    
                     `
                     ;
                     RowContainerDiv.append(RowDivItemInfo);
@@ -184,7 +184,7 @@ export function CreateGraph(e) {
     const SteamData =  historySitesAll['steam']['main'][itemName];
     
     const itemData = historySitesAll[MainSite][DomainMain][itemName];
-    
+    console.log(itemData);
     
 
     if (!itemData) return;
