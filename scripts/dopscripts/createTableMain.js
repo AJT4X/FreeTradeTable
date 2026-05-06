@@ -68,7 +68,7 @@ export class CreateMainTable{
                         <span style='cursor:pointer' id='GraphFind'>📊</spam>
                     </div>
                     
-                    <div id="History"></div>
+                    
                     `
                     ;
                     RowContainerDiv.append(RowDivItemInfo);
@@ -168,14 +168,16 @@ export function CreateGraph(e) {
     const DomainMain = document.querySelector('#SiteName')?.dataset['domain'];
    
     const result = [];
-    document.querySelector('#CanvasActive')?.remove();
+    document.querySelector('#History')?.remove();
     const rowDiv = e.target.closest('.rowDiv');
     const itemName = rowDiv.querySelector('[data-skinname]').dataset.skinname;
-    const historyDiv = rowDiv.querySelector('#History');
+    const historyDiv = document.createElement('div');
+    historyDiv.id = 'History';
 
     const canvas = document.createElement('canvas');
     canvas.id ='CanvasActive';
     historyDiv.append(canvas);
+    rowDiv.append(historyDiv);
 
     // собираем данные
     
