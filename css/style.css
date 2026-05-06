@@ -193,9 +193,6 @@ body {
     max-width: 800px;
     gap: 5px;
 }
-#History{
-    width: 35%;
-}
 
 #MinMax{
     display: flex;
