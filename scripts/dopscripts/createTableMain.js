@@ -119,7 +119,7 @@ export class CreateMainTable{
                     "tf2" : "440"
                 }
                 const game_type = LeftItem.item_game_type;
-                console.log(LeftItem,game_type);
+                
                 
                 const RowDivItemInfo = document.createElement('div');
                 RowDivItemInfo.classList.add('rowDiv');
