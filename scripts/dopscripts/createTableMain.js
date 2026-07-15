@@ -108,7 +108,7 @@ export class CreateMainTable{
     }
     rendeItem(key,value,MainCurrency){
         try{
-            console.log(key)
+            
             if(value['active'] == 'true'){
                 let RightItem = jsob_sites_item_all[this.rightSite][this.domain][key];
                 
