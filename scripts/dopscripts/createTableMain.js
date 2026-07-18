@@ -165,7 +165,7 @@ export class CreateMainTable{
 
             }
         }catch(err){
-            console.log(err);
+            console.log(err,key);
         }
         }
 };
