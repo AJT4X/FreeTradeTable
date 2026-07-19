@@ -23,7 +23,7 @@ export function CreateMainInfoBlockItem(elemet){
         const float = jsob_sites_item_all[MainSite][DomainMain][ItemName]['float'] ?? 0;
         const charmpattern = jsob_sites_item_all[MainSite][DomainMain][ItemName]['charmpattern'] ?? 0;
         const ItemIcon = steam_items_all[ItemName]['image'];
-        
+        console.log(ItemIcon);
         var ProcentOffer = ((parseFloat(SitePrice) - parseFloat(SteamPrice))/parseFloat(SteamPrice))*100;
         var ProcentOrder = ((parseFloat(SitePrice) - parseFloat(SteamOrder))/parseFloat(SteamOrder))*100;
         var maxBotGetItem =jsob_sites_item_all[MainSite][DomainMain][ItemName]?.maxBotGetItem || 0;
@@ -70,6 +70,7 @@ export function CreateMainInfoBlockItem(elemet){
             return;
         }
         function Image(info){
+            console.log(info);
             return `
                 <img src='${info.image}' class='PicImgBigView' id='ItemImageBigView'>
             `;
@@ -168,7 +169,7 @@ export function CreateMainInfoBlockItem(elemet){
                 
                 resutlAppend.push(PricesDivItemInfoBigView);
                         }catch(e){
-                            console.log(e);
+                            console.error(e,e.stack,e.message,info);
                         }
         };
 
