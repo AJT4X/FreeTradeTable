@@ -116,7 +116,8 @@ export class CreateMainTable{
                 
                 const GameIndex = {
                     "cs2" : "730",
-                    "tf2" : "440"
+                    "tf2" : "440",
+                    "rust" : "252490"
                 }
                 const game_type = LeftItem.item_game_type;
                 
