@@ -11,13 +11,45 @@ export function CenterDiv(Element){
     const UpDiv = document.createElement('div');
     UpDiv.id = 'UpDiv';
     const Donate = DonateTrade();
+    const gamePeak = GameType();
     Tg();
     Currency();
     Sell_Order();
     FindAllPriceForItemName();
     CreteTf2KeyButton();
     Language();
+    function GameType(){
+        let UserSetTypeGame = localStorage.getItem('usergameset');
+        if(!UserSetTypeGame){
+            localStorage.setItem('usergameset',JSON.stringify(['cs2','tf2','rust']));
+            UserSetTypeGame = localStorage.getItem('usergameset');
+        }
+        console.log(UserSetTypeGame);
 
+        let ReturnHtml = document.createElement('div');
+        ReturnHtml.classList.add('PeakGame');
+        const img = "https://raw.githubusercontent.com/AJT4X/iconSitesTradeProject/refs/heads/main/";
+        var GameType = {
+            "730" : {
+                "gamename" : "cs2"
+            },
+            "440" : {
+                "gamename" : "tf2"
+            },
+            "252490" : {
+                "gamename" : "rust"
+            }
+        };
+        Object.entries(GameType).forEach(([key,value])=>{
+            const ActiveGameStatus = UserSetTypeGame.includes(value.gamename)? "ActiveGameStatus" : "";
+            console.log(ActiveGameStatus);
+            ReturnHtml.innerHTML += `<div class='GameDiv'>
+                <img class='PeakGameImg ${ActiveGameStatus}' id='${value.gamename}' src='${img}${value.gamename}.ico'>
+            </div>`
+        });
+
+        return ReturnHtml;
+    };
     function Sell_Order(){
         const Sell_Order = document.createElement('div');
         let Sell_Order_Storage = localStorage.getItem('SteamPolar');
@@ -162,7 +194,7 @@ export function CenterDiv(Element){
         });
 
     }
-    Element.append(UpDiv,Donate);
+    Element.append(UpDiv,Donate,gamePeak);
     
 }
 

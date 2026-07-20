@@ -68,10 +68,16 @@ export class CreateMainTable{
 
         try{
             const allRightBlock = jsob_sites_item_all[this.rightSite][this.domain];
-            const entries = Object.entries(allRightBlock);
-            const sorted = entries.sort((a, b) => {
-                return b[1].price - a[1].price;
-                });
+            const gameListUser = localStorage.getItem("usergameset");
+            //'name':{'info':int'price'} = *entries = [['name':...]]
+            //filter true/false если отвечает условию
+            const entries = Object.entries(allRightBlock)
+            .filter(([key]) =>{
+                const item = steam_items_all[key];
+                return item && gameListUser.includes(item.item_game_type);
+            })
+            .sort((a,b)=>b[1].price-a[1].price);
+            
             const sliseBlock = entries.slice(this.offset, this.offset + this.limit);
 
             if(sliseBlock.length==0){
@@ -111,7 +117,7 @@ export class CreateMainTable{
             
             if(value['active'] == 'true'){
                 let RightItem = jsob_sites_item_all[this.rightSite][this.domain][key];
-                
+                let gameListUser = localStorage.getItem("usergameset");
                 let LeftItem = steam_items_all[key];
                 
                 const GameIndex = {
@@ -144,7 +150,7 @@ export class CreateMainTable{
                 <div class='MainDiv'>
                     <div class="RowDivItem">
                         <img class='imgSteamPic itemInRow' data-domain='${this.domain}' data-skinname="${key}" src=${LeftItem.image? LeftItem.image : 'https://community.fastly.steamstatic.com/economy/image/'+RightItem.icon}></img>
-                        <span style="color:white;font-size: 24px;cursor: pointer" data-gameid="${GameIndex[game_type]}" id='ItemInRow' data-name="${key}">${key} </span>
+                        <span style="color:white;font-size: 24px;cursor: pointer" data-gameid="${game_type}" id='ItemInRow' data-name="${key}">${key} </span>
                     </div>
                     <div class='RowDivItem' >
                         <img class="imgSteamPic itemInRow" id='SteamIcon' src="${steam_icon_url}">

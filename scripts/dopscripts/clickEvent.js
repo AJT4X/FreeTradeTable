@@ -34,6 +34,21 @@ export function EventClick(callback) {
         return;
             
         }
+        if(el.target.closest('.GameDiv')){
+            const GameRemove = el.target.closest('.PeakGameImg');
+            GameRemove.classList.remove('ActiveGameStatus');
+            let usergamelist = JSON.parse(localStorage.getItem('usergameset'));
+            const EventGame = el.target.id;
+            console.log(EventGame);
+            if(usergamelist.includes(EventGame)){
+                usergamelist = usergamelist.filter(game=> game !== EventGame);
+            }else{
+                usergamelist.push(EventGame);
+                el.target.classList.add('ActiveGameStatus');
+            }
+            
+            localStorage.setItem('usergameset',JSON.stringify(usergamelist));
+        };
         if (el.target.closest('#ExitButtonItemInfo')){
             document.querySelector('#MainBlockDivItemShowInfo')?.remove();
         }

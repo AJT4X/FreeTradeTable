@@ -363,6 +363,26 @@ body {
     display: flex;
     align-items: center;
 }
+.PeakGameImg:hover{
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 255, 200, 1);  
+}
+.ActiveGameStatus{
+    box-shadow: 0 0 20px rgb(91, 212, 10); 
+    border-radius: 155px;
+    
+}
+.PeakGame{
+    display: flex;
+    gap:5px;
+    margin-top: 5px;
+    justify-content: center;
+    align-items: center;
+}
+.PeakGameImg{
+    width: 30px; 
+}
 #ImageItemAndPricesLeftDiv {
     display: flex;
     flex-direction: column;
