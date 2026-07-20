@@ -150,7 +150,7 @@ export class CreateMainTable{
                 <div class='MainDiv'>
                     <div class="RowDivItem">
                         <img class='imgSteamPic itemInRow' data-domain='${this.domain}' data-skinname="${key}" src=${LeftItem.image? LeftItem.image : 'https://community.fastly.steamstatic.com/economy/image/'+RightItem.icon}></img>
-                        <span style="color:white;font-size: 24px;cursor: pointer" data-gameid="${game_type}" id='ItemInRow' data-name="${key}">${key} </span>
+                        <span style="color:white;font-size: 24px;cursor: pointer" data-gameid="${GameIndex[game_type]}" id='ItemInRow' data-name="${key}">${key} </span>
                     </div>
                     <div class='RowDivItem' >
                         <img class="imgSteamPic itemInRow" id='SteamIcon' src="${steam_icon_url}">
