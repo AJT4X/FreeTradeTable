@@ -131,7 +131,7 @@ export class CreateMainTable{
                 const RowDivItemInfo = document.createElement('div');
                 RowDivItemInfo.classList.add('rowDiv');
                 if(RightItem['overpay']){
-                    RowDivItemInfo.style.border = '1px solid purple';
+                    RowDivItemInfo.classList.add('overpayStyle');
                 }
                 let steam_price_check = LeftItem ? parseFloat(LeftItem['price']) : 0;
                
@@ -452,6 +452,7 @@ export function overPayCreate(el){
        
         const overPayDiv = document.createElement('div');
         overPayDiv.classList.add('StickerOverpatDiv');
+        console.log(steam_items_all[el.name]);
         overPayDiv.innerHTML = `
         
         <img src='${steam_items_all[el.name]['image']}' title='${el.name}' id='OverpayStickersImg'>

@@ -149,6 +149,9 @@ body {
     align-items: center;
     gap: 5px;
 }
+.overpayStyle {
+    background-color: rgba(128,0,128,0.3);
+}
 #StickerOverpayPrice{
     color:green;
     font-size: 22px;

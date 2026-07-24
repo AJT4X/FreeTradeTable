@@ -269,8 +269,6 @@ export async function CreateItemFindBlock() {
 
           
             for (const domain in value){
-                
-                
                 if(jsob_sites_item_all[site_name][domain][inputFindValue] 
                     && 
                     jsob_sites_item_all[site_name][domain][inputFindValue]['active'] == 'true'){
@@ -290,7 +288,7 @@ export async function CreateItemFindBlock() {
                         <span class='RowInfo' data-dollarprice='${price}' data-price='${price}'>
                         ${(price*SitesCurrency[currencyNow]).toFixed(2)} ${ReversCurrency[currencyNow]}
                         </span>
-                        <span style='color:${procent>0? 'green': 'red'}'>${procent >0? "+" : ''}${(procent).toFixed(2)}%</span>
+                        <span id='procent' data-procent=${procent} style='color:${procent>0? 'green': 'red'}'>${procent >0? "+" : ''}${(procent).toFixed(2)}%</span>
                         
                         `;
                         ItemInfoDivSites.append(ItemFindSitesRowDiv);
@@ -300,5 +298,17 @@ export async function CreateItemFindBlock() {
         
         ItemInfoMainDiv.append(ItemInfoDivSteam,ItemInfoDivSites);
         GrandDivForItemFind.append(ItemInfoMainDiv);
-    }
+    };
+    const container = document.querySelector('.ItemInfoDivSites');
+    const rows = [...container.querySelectorAll('.ItemFindSitesRowDiv')];
+    rows.sort((a,b)=>{
+        const pA = parseFloat(
+            a.querySelector('#procent')?.dataset.procent || 0
+        );
+        const pB = parseFloat(
+            b.querySelector('#procent')?.dataset.procent || 0
+        );
+        return pB-pA;
+    });
+    rows.forEach(row=>container.appendChild(row));
 }
