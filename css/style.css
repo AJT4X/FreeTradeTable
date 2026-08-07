@@ -189,8 +189,7 @@ body {
 }
 .left:hover,
 .right:hover{
-    transform: scale(1);  
-    box-shadow: 0 0 15px rgba(0, 255, 200, 0.5);  
+    box-shadow: 0 0 15px rgba(0, 255, 200, 0.3);  
     gap:5px;
 }
 
@@ -393,11 +392,13 @@ body {
     align-items: center;     
     height: 100%;
 }
+#RightDiv{
+    max-height: 70vh;
+    overflow-y: auto;
+}
 #RightDivBigOverview{
     display: flex;
     flex-direction: column;
-    
-  
     align-items: center;
 }
 .SteamDivPriceAndProcnet{

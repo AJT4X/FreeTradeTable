@@ -1,0 +1,53 @@
+body{
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+}
+#content {
+
+    max-width: 900px;
+    margin: 40px auto;
+    color: white;
+    line-height: 1.7;
+}
+#content a{
+    color: green;
+    width: 50%;
+}
+#mainGo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#MainSite{
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all .2s ease;
+}
+#MainSite:hover{
+    transform: scale(1.05);
+    background: #2563eb;
+    box-shadow: 0 0 20px rgba(59,130,246,.5);
+}
+@keyframes pulse{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.06);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+#MainSite{
+    animation: pulse 1.5s infinite;
+}
