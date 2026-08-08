@@ -54,6 +54,7 @@ https://steamerrors.com/tradeoffers - Possible errors and their meanings (Exchan
 https://vaclist.net/banned - Bans List / Список забаненых
 
 https://csgocasetracker.com - Number of opened cases/Количество открытых кейсов
+https://partner.steamgames.com/doc/store/pricing/currencies - Steam Api Docs/Steam Api Документация 
 Steam exchange rates /Курс валют Steam:
 
 * https://steam-currency.ru/ 
