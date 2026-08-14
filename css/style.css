@@ -247,6 +247,7 @@ body {
     color: white;
 }
 
+
 .RowSitePic:hover{
     transform: scale(1.15);  
     box-shadow: 0 0 15px rgba(0, 255, 200, 0.5);  

@@ -82,6 +82,12 @@ https://dev.doctormckay.com - Node.js lib for Steam developer forum/Форум �
 [CsBoard](https://csboard.com/?ref=73824f87) 
 [csgotraders](https://csgotraders.net/ref/DZFIV99)
 
+
+***Extensions/Расширения***
+
+[cs2trader](https://chromewebstore.google.com/detail/cs2-trader-steam-trading/kaibcgikagnkfgjnibflebpldakfhfih?pli=1) [SIH](https://chromewebstore.google.com/detail/steam-inventory-helper/cmeakgjggjdlcpncigglobpjbkabhmjl) [BetterFloat](https://chromewebstore.google.com/detail/betterfloat/bphfhlfhnohppnleaehnlfigkkccpglk) [CsFloat](https://chromewebstore.google.com/detail/csfloat-market-checker/jjicbefpemnphinccgikpdaagjebbnhg?type=ext&hl=uk&itemlang=hr) 
+
+
 ***TRADE CHATS/Трейд чаты***
 
 tg:

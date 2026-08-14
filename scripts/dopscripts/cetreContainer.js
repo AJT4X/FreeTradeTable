@@ -18,6 +18,8 @@ export function CenterDiv(Element){
     FindAllPriceForItemName();
     CreteTf2KeyButton();
     Language();
+    ArchiveButton();
+    
     function GameType(){
         let UserSetTypeGame = localStorage.getItem('usergameset');
         if(!UserSetTypeGame){
@@ -50,6 +52,15 @@ export function CenterDiv(Element){
 
         return ReturnHtml;
     };
+    function ArchiveButton(){
+        const LinksD = document.createElement('div');
+
+        LinksD.innerHTML = `
+            <a id="GoLinks" class='DonateA' href="/dop_pages/infoTrade/helper.html">Links</a>
+        `;
+        console.log(LinksD);
+        UpDiv.append(LinksD);
+    }
     function Sell_Order(){
         const Sell_Order = document.createElement('div');
         let Sell_Order_Storage = localStorage.getItem('SteamPolar');
