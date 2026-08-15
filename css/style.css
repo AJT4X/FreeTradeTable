@@ -299,6 +299,25 @@ body {
     flex-direction: column;
     margin-top: -4%;
 }
+.RowInfoDop {
+    color: red;
+    font-size: 14px;
+    animation: yellowGlow 1.8s ease-in-out infinite;
+    align-self: center;
+
+}
+
+@keyframes yellowGlow {
+    0%, 100% {
+        text-shadow: 0 0 1px rgba(255, 220, 0, 0.1);
+    }
+    50% {
+        text-shadow: 0 0 6px rgba(255, 220, 0, 1);
+    }
+}
+.refSites{
+    background-color: rgb(255,255,0,0.2);
+}
 .RowInfo {
     color: white;
     font-size: 24px;

@@ -34,13 +34,16 @@ export function PicsSitesFunc(editel){
         AllRightDiv.id = 'RightDiv';
         Object.entries(jsob_sites_item_all).forEach(([key,value])=>{
             const nameSite = key;
-            Object.entries(value).forEach(([key,value])=>{
+            Object.keys(value).forEach((key)=>{
                 const domain = key;
                 const RowSitePic = document.createElement('div');
                 const ImgPicSite = document.createElement('img');
                 const TextPicSite = document.createElement('span');
                 ImgPicSite.classList.add('imgSteamPic');
                 RowSitePic.classList.add('RowSitePic');
+                if(SitesInfo[nameSite]['ref']){
+                    RowSitePic.classList.add('refSites');
+                }
                 RowSitePic.dataset.name = nameSite;
                 RowSitePic.dataset.domain = domain;
                 ImgPicSite.src = SitesInfo[nameSite]['icon'];

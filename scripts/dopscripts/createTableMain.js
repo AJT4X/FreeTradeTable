@@ -46,7 +46,7 @@ export class CreateMainTable{
                 ${SitesInfo[this.rightSite]?.promo 
                 ?`<span class='RowInfo'>Promo: ${SitesInfo[this.rightSite].promo}</span>` : ''}
                 <button title='Сортировка' class='Sort' id="SortItemInTable">↓☰↑</button>
-                <a class='RowInfo' style='color:red;font-size:14px' href="${SitesInfo[this.rightSite]['url']}" target="_blank">${TranslationBlock[langUser]['GoSite']}</a>
+                <a class='RowInfoDop' href="${SitesInfo[this.rightSite]['url']}" target="_blank">${TranslationBlock[langUser]['GoSite']}</a>
                 ${SitesInfo[this.rightSite]?.comment
                     ?`<span title='site info' id='CommentDev' style='cursor:pointer;color:red' class="RowInfo">⚠️</span>` : ''}
         `;
