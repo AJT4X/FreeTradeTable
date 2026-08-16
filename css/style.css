@@ -310,13 +310,19 @@ body {
 @keyframes yellowGlow {
     0%, 100% {
         text-shadow: 0 0 1px rgba(255, 220, 0, 0.1);
+        color: green;
     }
     50% {
         text-shadow: 0 0 6px rgba(255, 220, 0, 1);
+        color: red;
     }
 }
-.refSites{
-    background-color: rgb(255,255,0,0.2);
+.refSites {
+    background: linear-gradient(
+        235deg,
+        rgba(135, 158, 5, 0.829),
+        rgba(219, 243, 63, 0.03)
+    );
 }
 .RowInfo {
     color: white;
