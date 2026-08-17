@@ -411,6 +411,9 @@ body {
 .PeakGameImg{
     width: 30px; 
 }
+#ErrorFindItem{
+    color:red;
+}
 #ImageItemAndPricesLeftDiv {
     display: flex;
     flex-direction: column;
@@ -544,8 +547,7 @@ body {
        margin-top: -5%;;
     }
     .ItemInfoDivSites{
-        grid-template-rows: repeat(2,1fr);
-        
+        grid-template-rows: repeat(6,1fr);
     }
     .RowContanerDiv{
         width: 100%;
@@ -584,5 +586,6 @@ body {
         width: 100%;
         overflow-x: hidden;
     }
+
     
 }

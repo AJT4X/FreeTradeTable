@@ -12,7 +12,7 @@ export var TranslationBlock = {
         "bot" : "The bot is ready to accept",
         "overpay" : "Overpay:",
         "grapheror" : "Rendering error/Out of data",
-       
+        "itemFindError" : "the item is not available on the service's bots or there is an error in the name."
     },
     "RU" : {
         "domain" : {
@@ -27,7 +27,7 @@ export var TranslationBlock = {
         "bot" : "Бот готов принять",
         "overpay" :"Переплата:",
         "grapheror" : "Ошибка отрисовки/Нехватка данных",
-       
+        "itemFindError" : "предмета нет на ботах сервиса или допущенна ошибка в названии."
         
     }
     

@@ -256,59 +256,71 @@ export async function CreateItemFindBlock() {
     const InputFind = document.querySelector('#InputFindItem');
     const GrandDivForItemFind = document.querySelector('#GrandItemDivFind');
     const currencyNow = ActiveGetStorage('currency');
-    
+    const userLanguage = localStorage.getItem('language_user');
     if(!InputFind) return;
     let inputFindValue = InputFind.value;
 
     if (inputFindValue && GrandDivForItemFind){
         const currency_user = (localStorage.getItem('SteamPolar') || 'Offer').toLowerCase();
 
-        const SteamPrice = steam_items_all[inputFindValue]['dollarPrice'][currency_user];
+        const SteamPrice = steam_items_all[inputFindValue]
+        ?steam_items_all[inputFindValue]['dollarPrice'][currency_user]
+        :null;
 
-        const PicImg = steam_items_all[inputFindValue]['image'];
-       
-        ItemInfoDivSteam.innerHTML = `
-        <img class='PicImg' src="${PicImg}">
-        <div class='rowInFindItem'>
-        <img class='imgSteamPic' src=${steam_icon_url}>
-        <span class='RowInfo ${currency_user == 'order'? "order_blue" : ""}'data-dollarprice='${SteamPrice}' id='imgSteamPic' data-price='${SteamPrice}'>${(SteamPrice*parseFloat(SteamCurrency[currencyNow])).toFixed(2)}${ReversCurrency[currencyNow]}</span>
-        </div>
-        `;
-        Object.entries(jsob_sites_item_all).forEach(([site_name,value])=>{
-            const SiteLink = SitesInfo[site_name]['url'];
-            const SiteIcon = SitesInfo[site_name]['icon'];
+        if(SteamPrice){
+            document.querySelector('#ErrorFindItem')?.remove();
+            const PicImg = steam_items_all[inputFindValue]['image'];
+            
+            ItemInfoDivSteam.innerHTML = `
+            <img class='PicImg' src="${PicImg}">
+            <div class='rowInFindItem'>
+            <img class='imgSteamPic' src=${steam_icon_url}>
+            <span class='RowInfo ${currency_user == 'order'? "order_blue" : ""}'data-dollarprice='${SteamPrice}' id='imgSteamPic' data-price='${SteamPrice}'>${(SteamPrice*parseFloat(SteamCurrency[currencyNow])).toFixed(2)}${ReversCurrency[currencyNow]}</span>
+            </div>
+            `;
+            Object.entries(jsob_sites_item_all).forEach(([site_name,value])=>{
+                const SiteLink = SitesInfo[site_name]['url'];
+                const SiteIcon = SitesInfo[site_name]['icon'];
 
-          
-            for (const domain in value){
-                if(jsob_sites_item_all[site_name][domain][inputFindValue] 
-                    && 
-                    jsob_sites_item_all[site_name][domain][inputFindValue]['active'] == 'true'){
-                        const item_block = jsob_sites_item_all[site_name][domain][inputFindValue];
+            
+                for (const domain in value){
+                    if(jsob_sites_item_all[site_name][domain][inputFindValue] 
+                        && 
+                        jsob_sites_item_all[site_name][domain][inputFindValue]['active'] == 'true'){
+                            const item_block = jsob_sites_item_all[site_name][domain][inputFindValue];
+                            
+                            const price = item_block['price'];
+                            let procent = ((price-SteamPrice)/SteamPrice)*100;
                         
-                        const price = item_block['price'];
-                        let procent = ((price-SteamPrice)/SteamPrice)*100;
-                       
-                        const ItemFindSitesRowDiv = document.createElement('div');
-                        ItemFindSitesRowDiv.classList.add('ItemFindSitesRowDiv');
+                            const ItemFindSitesRowDiv = document.createElement('div');
+                            ItemFindSitesRowDiv.classList.add('ItemFindSitesRowDiv');
 
-                        ItemFindSitesRowDiv.innerHTML = `
-                        <a style='color:white;text-decoration: none' href='${SiteLink}' target='_blank'>
-                        <img class='imgSteamPic ItemFindPicEx' src='${SiteIcon}'>
-                        <span>(${(domain[0]).toUpperCase()})</span>
-                        </a>
-                        <span class='RowInfo' data-dollarprice='${price}' data-price='${price}'>
-                        ${(price*SitesCurrency[currencyNow]).toFixed(2)} ${ReversCurrency[currencyNow]}
-                        </span>
-                        <span id='procent' data-procent=${procent} style='color:${procent>0? 'green': 'red'}'>${procent >0? "+" : ''}${(procent).toFixed(2)}%</span>
-                        
-                        `;
-                        ItemInfoDivSites.append(ItemFindSitesRowDiv);
+                            ItemFindSitesRowDiv.innerHTML = `
+                            <a style='color:white;text-decoration: none' href='${SiteLink}' target='_blank'>
+                            <img class='imgSteamPic ItemFindPicEx' src='${SiteIcon}'>
+                            <span>(${(domain[0]).toUpperCase()})</span>
+                            </a>
+                            <span class='RowInfo' data-dollarprice='${price}' data-price='${price}'>
+                            ${(price*SitesCurrency[currencyNow]).toFixed(2)} ${ReversCurrency[currencyNow]}
+                            </span>
+                            <span id='procent' data-procent=${procent} style='color:${procent>0? 'green': 'red'}'>${procent >0? "+" : ''}${(procent).toFixed(2)}%</span>
+                            
+                            `;
+                            ItemInfoDivSites.append(ItemFindSitesRowDiv);
+                    }
                 }
-            }
-        });
+            });
+            ItemInfoMainDiv.append(ItemInfoDivSteam,ItemInfoDivSites);
+            GrandDivForItemFind.append(ItemInfoMainDiv);
+        }else{
+            document.querySelector('#ErrorFindItem')?.remove();
+            const Error = `<span id='ErrorFindItem'>${inputFindValue} ${TranslationBlock[userLanguage]['itemFindError']}</span>`;
+            
+            console.log('error');
+            GrandDivForItemFind.innerHTML +=Error;
+        }   
         
-        ItemInfoMainDiv.append(ItemInfoDivSteam,ItemInfoDivSites);
-        GrandDivForItemFind.append(ItemInfoMainDiv);
+        
     };
     const container = document.querySelector('.ItemInfoDivSites');
     const rows = [...container.querySelectorAll('.ItemFindSitesRowDiv')];
