@@ -314,10 +314,11 @@ export async function CreateItemFindBlock() {
             GrandDivForItemFind.append(ItemInfoMainDiv);
         }else{
             document.querySelector('#ErrorFindItem')?.remove();
-            const Error = `<span id='ErrorFindItem'>${inputFindValue} ${TranslationBlock[userLanguage]['itemFindError']}</span>`;
+            const SafeText = escapeHTML(inputFindValue);
+            const Error = `<span id='ErrorFindItem'>${SafeText} ${TranslationBlock[userLanguage]['itemFindError']}</span>`;
             
             console.log('error');
-            GrandDivForItemFind.innerHTML +=Error;
+            GrandDivForItemFind.innerHTML += Error;
         }   
         
         
@@ -334,4 +335,11 @@ export async function CreateItemFindBlock() {
         return pB-pA;
     });
     rows.forEach(row=>container.appendChild(row));
+}
+function escapeHTML(value){
+    return String(value).replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
 }
