@@ -71,7 +71,15 @@ https://github.com/jessecar96/steamdesktopauthenticator - Steam Guard on PC/На
 https://cs2inspects.com/ru - Working with objects (Screenshots, videos, etc.)/Работа с предметами (Скриншоты,видео и т.д)
 https://github.com/JustArchiNET/ArchiSteamFarm - Automatic farms games, cards and clocks / Фарм карточек,часов в играх
 https://csfloat.com - Skins Database - Trade Calculator/Дата база скинов-Трейд калькулятор
+
+
+
+***Steam***
+
 https://store.steampowered.com/itemstore/866510/detail/15/ - Cheapest item on Steam (Removing the restriction)/Самый дешевый товар в Steam(Снятие ограничения)
+
+https://store.steampowered.com/buyitem/440/5050/1 - Tf2 +300 slots without downloading games/+300 слотов без скачки игры
+
 
 ***Forums/Форумы***
 
