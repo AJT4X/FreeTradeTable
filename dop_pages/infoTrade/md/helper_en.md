@@ -80,6 +80,10 @@ https://store.steampowered.com/itemstore/866510/detail/15/ - Cheapest item on St
 
 https://store.steampowered.com/buyitem/440/5050/1 - Tf2 +300 slots without downloading games/+300 слотов без скачки игры
 
+***Free Items Points / Бесплатные предметы за очки***
+
+https://store.steampowered.com/points/shop/app/2598440 
+https://store.steampowered.com/points/shop/app/3472480 
 
 ***Forums/Форумы***
 
