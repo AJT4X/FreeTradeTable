@@ -6,7 +6,7 @@ export var TranslationBlock = {
             "p2p" : "P2P"
         },
         "donate" : {
-            "inf" : "Did the service help? Every donated item will be used to support the development of the project."
+            "inf" : "The tables are free thanks to everyone who trades through the referral links or supports me with donations→"
         },
         "GoSite" : "Go to the site",
         "bot" : "The bot is ready to accept",
@@ -21,7 +21,7 @@ export var TranslationBlock = {
             "p2p" : "P2P",
         },
         "donate" : {
-            "inf" : "Сервис помог? Каждый предмет, переданный в качестве пожертвования, пойдёт на развитие проекта."
+            "inf" : "Таблицы бесплатные благодаря тем, кто трейдит по реферальным ссылкам или помогает донатом→"
         },
         "GoSite" : "Перейти на сайт",
         "bot" : "Бот готов принять",

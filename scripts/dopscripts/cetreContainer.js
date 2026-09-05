@@ -33,16 +33,20 @@ export function CenterDiv(Element){
         const img = "https://raw.githubusercontent.com/AJT4X/iconSitesTradeProject/refs/heads/main/";
         var GameType = {
             "730" : {
-                "gamename" : "cs2"
+                "gamename" : "cs2",
+                "status" : true
             },
             "440" : {
-                "gamename" : "tf2"
+                "gamename" : "tf2",
+                "status" : false
             },
             "252490" : {
-                "gamename" : "rust"
+                "gamename" : "rust",
+                "status" : false
             }
         };
         Object.entries(GameType).forEach(([key,value])=>{
+            if (!value.status) return;
             const ActiveGameStatus = UserSetTypeGame.includes(value.gamename)? "ActiveGameStatus" : "";
             console.log(ActiveGameStatus);
             ReturnHtml.innerHTML += `<div class='GameDiv'>
