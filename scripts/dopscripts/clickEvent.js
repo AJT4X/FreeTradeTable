@@ -1,6 +1,6 @@
 import { PicsSitesFunc, RightPicEdit } from './picSites.js';
 import { sortFunc,DevComment,CreateFilter,overPayCreate  } from './createTableMain.js';
-import { FindDetect,CreateItemFindBlock,FindTf2Key } from './cetreContainer.js'
+import { FindDetect,CreateItemFindBlock,FindTf2Key ,UserPriceCenterSteam} from './cetreContainer.js'
 import { CreateGraph } from './createTableMain.js';
 import { CreateMainInfoBlockItem } from './ItemInfoWatchMenu.js'
 
@@ -33,7 +33,10 @@ export function EventClick(callback) {
         window.open(steamMarketUrl, '_blank');
         return;
             
-        }
+        };
+        if(el.target.closest('#SteamPriceCenter')) {
+            UserPriceCenterSteam(el.target);
+        };
         if(el.target.closest('.GameDiv')){
             const GameRemove = el.target.closest('.PeakGameImg');
             GameRemove.classList.remove('ActiveGameStatus');

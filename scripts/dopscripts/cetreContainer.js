@@ -248,7 +248,37 @@ export async function FindDetect(){
     GrandDivItemFindDiv.append(HelpDivItemFind);
     document.body.append(GrandDivItemFindDiv);
     return;
-}
+};
+export async function UserPriceCenterSteam(el){
+    console.log(el);
+    let timer;
+    const input = document.createElement('input');
+    input.id = 'SteamInputId';
+    input.type = 'number';
+    el.replaceWith(input);
+    input.addEventListener('input',(el)=>{
+        clearTimeout(timer);
+        timer = setTimeout(()=>{
+            const currencyNow = ActiveGetStorage('currency');
+            let new_price = parseFloat(input.value)/SitesCurrency[currencyNow];
+
+            const all_rows = document.querySelectorAll('.ItemFindSitesRowDiv');
+            all_rows.forEach(el=>{
+                const RowInfPrice = el.querySelector('.RowInfo');
+                const old_price = RowInfPrice.dataset.dollarprice;
+                const old_procent = el.querySelector('#procent');
+                let new_procent = ((old_price-new_price)/new_price)*100;
+
+                old_procent.innerHTML = `<span id='procent' data-procent=${new_procent} style='color:${new_procent>0? 'green': 'red'}'>${new_procent >0? "+" : ''}${(new_procent).toFixed(2)}%</span>`;
+        });
+        },1000);
+        
+    });
+    input.focus();
+    input.select();
+
+    
+};
 export async function CreateItemFindBlock() {
     document.querySelector('#ItemInfoMainDiv')?.remove();
     const ItemInfoMainDiv =document.createElement('div');
@@ -272,6 +302,20 @@ export async function CreateItemFindBlock() {
         :null;
 
         if(SteamPrice){
+            PriceSet();
+
+            ItemInfoMainDiv.append(ItemInfoDivSteam,ItemInfoDivSites);
+            GrandDivForItemFind.append(ItemInfoMainDiv);
+        }else{
+            document.querySelector('#ErrorFindItem')?.remove();
+            const SafeText = escapeHTML(inputFindValue);
+            const Error = `<span id='ErrorFindItem'>${SafeText} ${TranslationBlock[userLanguage]['itemFindError']}</span>`;
+            
+            console.log('error');
+            GrandDivForItemFind.innerHTML += Error;
+        }   
+        
+        function PriceSet(){
             document.querySelector('#ErrorFindItem')?.remove();
             const PicImg = steam_items_all[inputFindValue]['image'];
             
@@ -279,7 +323,7 @@ export async function CreateItemFindBlock() {
             <img class='PicImg' src="${PicImg}">
             <div class='rowInFindItem'>
             <img class='imgSteamPic' src=${steam_icon_url}>
-            <span class='RowInfo ${currency_user == 'order'? "order_blue" : ""}'data-dollarprice='${SteamPrice}' id='imgSteamPic' data-price='${SteamPrice}'>${(SteamPrice*parseFloat(SteamCurrency[currencyNow])).toFixed(2)}${ReversCurrency[currencyNow]}</span>
+            <span class='RowInfo ${currency_user == 'order'? "order_blue" : ""}'id='SteamPriceCenter' data-dollarprice='${SteamPrice}' id='imgSteamPic' data-price='${SteamPrice}'>${(SteamPrice*parseFloat(SteamCurrency[currencyNow])).toFixed(2)}${ReversCurrency[currencyNow]}</span>
             </div>
             `;
             Object.entries(jsob_sites_item_all).forEach(([site_name,value])=>{
@@ -304,7 +348,7 @@ export async function CreateItemFindBlock() {
                             <img class='imgSteamPic ItemFindPicEx' src='${SiteIcon}'>
                             <span>(${(domain[0]).toUpperCase()})</span>
                             </a>
-                            <span class='RowInfo' data-dollarprice='${price}' data-price='${price}'>
+                            <span class='RowInfo' data-dollarprice='${price}' data-price='${price*SitesCurrency[currencyNow]}'>
                             ${(price*SitesCurrency[currencyNow]).toFixed(2)} ${ReversCurrency[currencyNow]}
                             </span>
                             <span id='procent' data-procent=${procent} style='color:${procent>0? 'green': 'red'}'>${procent >0? "+" : ''}${(procent).toFixed(2)}%</span>
@@ -314,18 +358,7 @@ export async function CreateItemFindBlock() {
                     }
                 }
             });
-            ItemInfoMainDiv.append(ItemInfoDivSteam,ItemInfoDivSites);
-            GrandDivForItemFind.append(ItemInfoMainDiv);
-        }else{
-            document.querySelector('#ErrorFindItem')?.remove();
-            const SafeText = escapeHTML(inputFindValue);
-            const Error = `<span id='ErrorFindItem'>${SafeText} ${TranslationBlock[userLanguage]['itemFindError']}</span>`;
-            
-            console.log('error');
-            GrandDivForItemFind.innerHTML += Error;
-        }   
-        
-        
+        }
     };
     const container = document.querySelector('.ItemInfoDivSites');
     const rows = [...container.querySelectorAll('.ItemFindSitesRowDiv')];
