@@ -1,0 +1,2 @@
+export let gb_flag = 'https://raw.githubusercontent.com/AJT4X/iconSitesTradeProject/refs/heads/main/eng_flag.ico';
+export let rf_flag = 'https://raw.githubusercontent.com/AJT4X/iconSitesTradeProject/refs/heads/main/rf_flag.ico';

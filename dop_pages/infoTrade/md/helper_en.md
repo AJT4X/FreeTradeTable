@@ -1,0 +1,110 @@
+# Links Helper
+
+### Topping up your Steam wallet/Пополнение кошелька стим *login
+[AimMarket](https://aim.market/p/d2292dea-2936-4ed7-87cd-633bd1fbf84e) [MarketCsgo](https://market.csgo.com/en/) [CsBoard](https://csboard.com/?ref=73824f87) [CobaltSkins](https://cobaltskins.tech/sell)
+
+### Steam LVL 
+[SteamLvlUp](https://slvlup.com/r/q3tngm)
+
+### Buy-Sell Mannco keys tf2/Купить-продать ключи Mannco для TF2
+[ManncoStore](https://mannco.store/?ref=mtm2zjc)
+
+
+### Trade Tables/ Трейд таблицы
+***Free***
+* https://cs2trade.xyz - orders/ордера
+* https://wskins.ru
+* [csflowx](https://csflowx.com/r/PBFLBB)
+* [csboard](https://csboard.com?ref=73824f87)
+* [priceempire](https://pricempire.com/comparison)
+* https://sih.app/comparison
+* https://csfolder.com/comparison
+
+***5$ Trial***
+
+* [TradeonPulse](https://pulse.tradeon.space?ref=7222692927)
+* [Skins-Table](https://skins-table.com/ref?name=STMISS)
+
+***Create Portfolio/Создание портфолио***
+* https://csfolder.com/portfolio
+* https://pricempire.com/Portfolio
+* https://steamfolio.com/
+
+***Information sites/Информационные сайты***
+
+https://21level.ru/en - Case drop rate/Процент выпадения кейсов
+
+[Gh_950_group_steam](https://raw.githubusercontent.com/AJT4X/950-Group-Steam-Info/refs/heads/main/group.json) -Steam Groups: Open-Closed Comments/Группы стима открытые-Закрытые комментарии
+
+https://steamid.uk/ - Steam Profile History / История изменения профиля по id
+
+https://steamerrors.com - Possible errors and their meanings/ Возможные ошибки и их значения
+https://steamerrors.com/tradeoffers - Possible errors and their meanings (Exchange)/ Возможные ошибки и их значения (Обмен)
+https://vaclist.net/banned - Bans List / Список забаненых
+
+https://csgocasetracker.com - Number of opened cases/Количество открытых кейсов
+https://partner.steamgames.com/doc/store/pricing/currencies - Steam Api Docs/Steam Api Документация 
+
+Steam exchange rates /Курс валют Steam:
+
+* https://steam-currency.ru/ 
+* https://csfolder.com/currencies
+
+https://csgobluegem.com/list-all-blue-gem-seeds-skins-pattern/ - All blue gems and their patterns/ Все блюгемы и их патерны
+
+***Tools/Инструменты***
+
+https://app.skinledger.com/dashboard - A tool for working with Cs2/Инструмент для работы с Cs2
+https://github.com/jessecar96/steamdesktopauthenticator - Steam Guard on PC/На ПК 
+
+https://cs2inspects.com/ru - Working with objects (Screenshots, videos, etc.)/Работа с предметами (Скриншоты,видео и т.д)
+https://github.com/JustArchiNET/ArchiSteamFarm - Automatic farms games, cards and clocks / Фарм карточек,часов в играх
+https://csfloat.com - Skins Database - Trade Calculator/Дата база скинов-Трейд калькулятор
+
+
+
+***Steam***
+
+https://store.steampowered.com/itemstore/866510/detail/15/ - Cheapest item on Steam (Removing the restriction)/Самый дешевый товар в Steam(Снятие ограничения)
+
+https://store.steampowered.com/buyitem/440/5050/1 - Tf2 +300 slots without downloading games/+300 слотов без скачки игры
+
+***Free Items Points / Бесплатные предметы за очки***
+
+https://store.steampowered.com/points/shop/app/2598440 
+https://store.steampowered.com/points/shop/app/3472480
+https://store.steampowered.com/points/shop/app/3099240
+
+***Forums/Форумы***
+
+https://dev.doctormckay.com - Node.js lib for Steam developer forum/Форум разработчика node.js либ для steam
+
+***Exchange offers/Обмен предложениями***
+
+[CsBoard](https://csboard.com/?ref=73824f87) 
+[csgotraders](https://csgotraders.net/ref/DZFIV99)
+
+
+***Extensions/Расширения***
+
+[cs2trader](https://chromewebstore.google.com/detail/cs2-trader-steam-trading/kaibcgikagnkfgjnibflebpldakfhfih?pli=1) [SIH](https://chromewebstore.google.com/detail/steam-inventory-helper/cmeakgjggjdlcpncigglobpjbkabhmjl) [BetterFloat](https://chromewebstore.google.com/detail/betterfloat/bphfhlfhnohppnleaehnlfigkkccpglk) [CsFloat](https://chromewebstore.google.com/detail/csfloat-market-checker/jjicbefpemnphinccgikpdaagjebbnhg?type=ext&hl=uk&itemlang=hr) 
+
+
+***TRADE CHATS/Трейд чаты***
+
+tg:
+* https://t.me/treidobmenprodaja *https://t.me/csgochatn
+* https://t.me/mrtwistertrade * https://t.me/cs2chatrade 
+* https://t.me/cs2tradeinvesting * https://t.me/tradersCS_2
+* https://t.me/csgotradingNEW * https://t.me/tradebydevil313
+* https://t.me/cs2TradeGroup * https://t.me/cs2tradexxx
+* https://t.me/chat_navi * https://t.me/ObmennayaCS2
+* https://t.me/Cs2tradechat567
+
+DS:
+* https://discord.gg/PB99EyEYf * https://discord.gg/JmuuSHnV
+* https://discord.gg/NWY7cqD7c * https://discord.gg/EFmgMpJqN
+* https://discord.gg/uv8xNu9Np * https://discord.gg/3tU3DGawj
+* https://discord.gg/QJKUVJHpt
+
+

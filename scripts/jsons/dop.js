@@ -1,0 +1,1 @@
+export var trade_link = 'https://steamcommunity.com/tradeoffer/new/?partner=809139998&token=1ZGAdi5Z';
