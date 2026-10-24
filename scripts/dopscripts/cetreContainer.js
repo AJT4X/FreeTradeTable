@@ -299,7 +299,7 @@ export async function CreateItemFindBlock() {
 
         const SteamPrice = steam_items_all[inputFindValue]
         ?steam_items_all[inputFindValue]['dollarPrice'][currency_user]
-        :null;
+        :0;
 
         if(SteamPrice){
             PriceSet();
