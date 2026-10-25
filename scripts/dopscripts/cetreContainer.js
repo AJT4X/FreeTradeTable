@@ -301,7 +301,7 @@ export async function CreateItemFindBlock() {
         ?steam_items_all[inputFindValue]['dollarPrice'][currency_user]
         :0;
 
-        if(SteamPrice){
+        if(steam_items_all[inputFindValue]){
             PriceSet();
 
             ItemInfoMainDiv.append(ItemInfoDivSteam,ItemInfoDivSites);
